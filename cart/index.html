@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-size: 50px;
+        }
+        .main{
+            display: flex;
+            justify-content: space-around;
+        }
+        button{
+            font-size: 50px;
+        }
+        .submit{
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="btn1"><button onclick="add('milk', 55)">milk(₹55)</button></div>
+        <div class="btn1"><button onclick="add('curd', 35)">curd(₹35)</button></div>
+        <div class="btn1"><button onclick="add('paneer', 80)">paneer(₹80)</button></div>
+        <div class="btn1"><button onclick="add('buttermilk', 15)">buttermilk(₹15)</button></div>
+        <div class="btn1"><button onclick="add('egg', 30)">egg(₹30)</button></div>
+    </div>
+    <div class="submit"><button class="fbtn" onclick="total()">Calculate</button></div>
+    <!-- <div id="cartFinale">toatal item purchased : <span id="cart"></span></div> -->
+    <div id="cartItem">toatal item purchased : <span id="totalItems"></span></div>
+    <div id="cartTotal">toatal money spent : <span id="kharcha"></span></div>
+    <script src="cart.js"></script>
+</body>
+</html>
