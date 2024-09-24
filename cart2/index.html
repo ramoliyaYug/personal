@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="cart.css" />
+  </head>
+  <body>
+    <div class="main">
+      <!-- Milk Item -->
+      <div class="btn1">
+        <button id="oneClickButton" onclick="add(1, 'milk', 55, 0); quantityManageAdd(1)">milk(₹55)</button>
+        <div class="btnGroup">
+          <button class="minus" onclick="quantityManageSubtract(1)">-</button>
+          <span class="lable1" id="lable1">0</span>
+          <button class="plus" onclick="quantityManageAdd(1)">+</button>
+        </div>
+      </div>
+
+      <!-- Curd Item -->
+      <div class="btn1">
+        <button id="oneClickButton" onclick="add(2, 'curd', 35, 0); quantityManageAdd(2)">curd(₹35)</button>
+        <div class="btnGroup">
+          <button class="minus" onclick="quantityManageSubtract(2)">-</button>
+          <span class="lable2" id="lable2">0</span>
+          <button class="plus" onclick="quantityManageAdd(2)">+</button>
+        </div>
+      </div>
+
+      <!-- Paneer Item -->
+      <div class="btn1">
+        <button id="oneClickButton" onclick="add(3, 'paneer', 80, 0); quantityManageAdd(3)">paneer(₹80)</button>
+        <div class="btnGroup">
+          <button class="minus" onclick="quantityManageSubtract(3)">-</button>
+          <span class="lable3" id="lable3">0</span>
+          <button class="plus" onclick="quantityManageAdd(3)">+</button>
+        </div>
+      </div>
+
+      <!-- Buttermilk Item -->
+      <div class="btn1">
+        <button id="oneClickButton" onclick="add(4, 'buttermilk', 15, 0); quantityManageAdd(4)">buttermilk(₹15)</button>
+        <div class="btnGroup">
+          <button class="minus" onclick="quantityManageSubtract(4)">-</button>
+          <span class="lable4" id="lable4">0</span>
+          <button class="plus" onclick="quantityManageAdd(4)">+</button>
+        </div>
+      </div>
+
+      <!-- Egg Item -->
+      <div class="btn1">
+        <button id="oneClickButton" onclick="add(5, 'egg', 30, 0); quantityManageAdd(5)">egg(₹30)</button>
+        <div class="btnGroup">
+          <button class="minus" onclick="quantityManageSubtract(5)">-</button>
+          <span class="lable5" id="lable5">0</span>
+          <button class="plus" onclick="quantityManageAdd(5)">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="submit">
+      <button class="fbtn" onclick="total()">Calculate</button>
+    </div>
+    <div id="cartItem">Total items purchased: <span id="totalItems"></span></div>
+    <div id="cartTotal">Total money spent: <span id="kharcha"></span></div>
+    
+    <script src="script.js"></script>
+  </body>
+</html>
