@@ -1,4 +1,7 @@
 let cart = [];
+let amountYouHave = 1000;
+document.getElementById('money').innerText = amountYouHave;
+let totalCost = 0;
 
 // Add item to the cart array
 function add(id, items, price, quantity) {
@@ -42,7 +45,6 @@ function quantityManageSubtract(x) {
 // Calculate total quantity and total price
 function total() {
   let totalItems = 0;
-  let totalCost = 0;
 
   // Calculate the total number of items and total cost
   for (let i = 0; i < cart.length; i++) {
@@ -61,4 +63,19 @@ function total() {
 
   // Empty the cart after calculation
   cart = [];
+  return totalCost;
 }
+
+// Check if the amount you have is enough to buy the items in the cart  
+  function checkAmount() {
+    if (totalCost <= amountYouHave) {
+      document.getElementById('display').innerText = "";
+      let remainingAmount = amountYouHave - totalCost;
+      document.getElementById('money').innerText = remainingAmount;
+      // return true;
+    } else {
+      document.getElementById('display').innerText = "Insufficient amount";
+      document.getElementById('paisa').innerText = amountYouHave;
+      // return false;
+    }
+  }

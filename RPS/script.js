@@ -73,4 +73,3 @@ function playAgain(){
     document.getElementById("compChoosed").innerText = "";
     document.getElementById("res").innerText = "";
 }
-

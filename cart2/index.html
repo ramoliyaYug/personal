@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="cart.css" />
   </head>
   <body>
+    <div class="purse">
+      <p id="money"></p>
+    </div>
     <div class="main">
       <!-- Milk Item -->
       <div class="btn1">
@@ -60,8 +63,9 @@
     </div>
 
     <div class="submit">
-      <button class="fbtn" onclick="total()">Calculate</button>
+      <button class="fbtn" onclick="total(), checkAmount()">Calculate</button>
     </div>
+    <p id="display"></p>
     <div id="cartItem">Total items purchased: <span id="totalItems"></span></div>
     <div id="cartTotal">Total money spent: <span id="kharcha"></span></div>
     
