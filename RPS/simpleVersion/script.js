@@ -1,6 +1,8 @@
 let playerPlay;
 let compPlay;
 let result;
+let playerScore = 0;
+let computerScore = 0;
 function rock() {
   playerPlay = "rock";
   document.getElementById("playChoosed").innerText = "ROCK";
@@ -41,21 +43,33 @@ function computerPlay() {
 
 function playRound() {
     if(playerPlay == "rock" && compPlay == "paper"){
+        computerScore += 1;
+        document.getElementById('computerScore').innerText = computerScore;
         result = "You Lose!";
     }
     else if(playerPlay == "rock" && compPlay == "scissors"){
+        playerScore += 1;
+        document.getElementById('playerScore').innerText = playerScore;
         result = "You Win!";
     }
     else if(playerPlay == "paper" && compPlay == "rock"){
+        playerScore += 1;
+        document.getElementById('playerScore').innerText = playerScore;
         result = "You Win!";
     }
     else if(playerPlay == "paper" && compPlay == "scissors"){
+        computerScore += 1;
+        document.getElementById('computerScore').innerText = computerScore;
         result = "You Lose!";
     }
     else if(playerPlay == "scissors" && compPlay == "rock"){
+        computerScore += 1;
+        document.getElementById('computerScore').innerText = computerScore;
         result = "You Lose!";
     }
     else if(playerPlay == "scissors" && compPlay == "paper"){
+        playerScore += 1;
+        document.getElementById('playerScore').innerText = playerScore;
         result = "You Win!";
     }
     else{
@@ -69,7 +83,11 @@ function playAgain(){
     playerPlay = "";
     compPlay = "";
     result = "";
+    playerScore = 0;
+    computerScore = 0;
     document.getElementById("playChoosed").innerText = "";
     document.getElementById("compChoosed").innerText = "";
     document.getElementById("res").innerText = "";
+    document.getElementById('playerScore').innerText = 0;
+    document.getElementById('computerScore').innerText = 0;
 }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Let's Play - Rock, Paper, Scissors</h1>
+
+    <div class="main">
+      <!-- player div -->
+      <div class="player">
+        <p class="playerText">Player (YOU)</p>
+        <div class="buttons">
+          <div class="rock">
+            <button class="rockBtn" onclick="rock(),decide(),playRound()">ROCK</button>
+          </div>
+
+          <div class="paper">
+            <button class="paperBtn" onclick="paper(),decide(),playRound()">PAPER</button>
+          </div>
+
+          <div class="Scissors">
+            <button class="scissorsBtn" onclick="scissors(),decide(),playRound()">SCISSORS</button>
+          </div>
+          <p id="playChoosed"></p>
+          <p>score:</p>
+          <p id="playerScore">0</p>
+        </div>
+      </div>
+
+      <div class="computer">
+        <p class="playerText">Computer is thinking....& waiting for you</p>
+        <p id="compChoosed"></p>
+        <p>score:</p>
+        <p id="computerScore">0</p>
+      </div>
+    </div>
+
+    <div class="result">
+      <p id="res"></p>
+    </div>
+
+    <div class="reset">
+      <button class="playAgain" onclick="playAgain()">Play Again</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

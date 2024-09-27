@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: black;
+    color: white
+}
+
+h1{
+    text-align: center;
+    font-size: 5em;
+}
+
+.main{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 1.9em;
+}
+
+.player{
+    margin-top: 5em;
+    margin-right: 5em;
+}
+.player p{
+    margin: 20px;
+}
+
+.computer{
+    margin-top: 5em;
+    margin-left: 5em;
+}
+
+.computer p{
+    margin: 20px;
+}
+
+.rockBtn,.paperBtn,.scissorsBtn{
+    font-size: 1.1em;
+    margin: 10px;
+}
+
+.result{
+    text-align: center;
+    font-size: 5em;
+}
+
+.reset{
+    text-align: center;
+    margin: 3em;
+}
+
+.playAgain{
+    font-size: 3em;
+}
