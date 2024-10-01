@@ -1,0 +1,174 @@
+/* Global Variables for Theme Colors */
+:root {
+    --light-bg: #f4f4f9;
+    --light-text: #333;
+    --light-card-bg: #fff;
+    --light-border: #ddd;
+    --dark-bg: #121212;
+    --dark-text: #e0e0e0;
+    --dark-card-bg: #1f1f1f;
+    --dark-border: #333;
+}
+
+/* Body Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--light-text);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.toggle-theme {
+    background: none;
+    border: 2px solid var(--light-border);
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #333;
+}
+
+.toggle-theme:hover {
+    border-color: var(--light-text);
+}
+
+/* Sections */
+.persons-section, .items-section {
+    background-color: var(--light-card-bg);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--light-border);
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--light-border);
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: var(--light-text);
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#listOfPersons, #checkboxList {
+    margin-top: 10px;
+}
+
+#checkboxList label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid var(--light-border);
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Total */
+#totalPerPerson {
+    margin-top: 20px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input[type="text"], input[type="number"], button {
+        font-size: 14px;
+    }
+}
+
+/* Dark Mode Styles */
+body.dark {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+body.dark .toggle-theme {
+    border-color: var(--dark-border);
+}
+
+body.dark .persons-section, 
+body.dark .items-section {
+    background-color: var(--dark-card-bg);
+    border-color: var(--dark-border);
+}
+
+body.dark input[type="text"], 
+body.dark input[type="number"] {
+    background-color: var(--dark-card-bg);
+    border-color: var(--dark-border);
+    color: var(--dark-text);
+}
+
+body.dark button {
+    background-color: #0069d9;
+}
+
+body.dark th, body.dark td {
+    border-color: var(--dark-border);
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Money Splitter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Money Splitter</h1>
+            <button id="themeToggle" class="toggle-theme">🌙 Dark Mode</button>
+        </header>
+
+        <div class="persons-section">
+            <label for="nameOfPersons">Add Name Of Persons</label>
+            <input type="text" id="nameOfPersons" placeholder="Enter person's name" />
+            <button onclick="addingPersonToArray()">Add People</button>
+            <div id="listOfPersons" class="list-of-persons"></div>
+        </div>
+
+        <div class="items-section">
+            <label for="nameOfItems">Add Name Of Items</label>
+            <input type="text" id="nameOfItems" placeholder="Enter item name" />
+            <label for="amount">Enter Amount</label>
+            <input type="number" id="amount" placeholder="Enter amount" />
+            <label>Select Persons</label>
+            <div id="checkboxList"></div>
+            <button onclick="addItem()">Add Item</button>
+        </div>
+
+        <table border="1" id="itemTable">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Amount</th>
+                    <th>Shared By</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <button onclick="calculateTotalPerPerson()">Calculate Total</button>
+        <div id="totalPerPerson"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
