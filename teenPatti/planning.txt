@@ -1,0 +1,44 @@
+- what we will see:
+1.user inputs the name, age
+2.add the amount to the wallte
+3.get the card and will be asked to play hidden or shown
+4.asked to input the bet amount
+5.one by one bet amount will be increased
+6.if player want to quit it will write end to end the game and the win amount will be given accordingly
+
+
+-winning conditions:
+ - any three number is the most valuable according to the card value
+  - if both has 3 same number card then the value will be checked
+ - then it comes the pure sequence which has same suit
+  - if both has sequence then value of the sequence will be checked
+ - then it comes the same suits
+  - again biggest value card player will win
+ - then raw sequence which has different suit
+  - if both has sequence then value of the sequence will be checked
+ - two same number
+  - if both has two same number then value of that same number will be checked
+   - even the same number is also same then the third card's value will be chacked and bigger value card holder will win
+ - two same suits
+  -first the value of the card will be chacked
+   -if the suit is same then value of the suit card will be chacked
+ - then at last biggest value card is winner
+
+- game flow:
+ - asked for name then vlidating name
+ - asked for age then valdating age
+ - asking to add amount in the wallte
+ - player cards has be divided do you want to see it (y/n)?
+ - showing the playercards
+ - are you ready to bet(y/n)?
+ - enter the bet amount
+ - showing the result of the computer
+ - asking to play the next move(y/n)?
+ - enter the bet amount
+
+-concepts can be used here:
+ -recursion
+ -forEach
+ -callback function
+ -higher order function
+ -to optimize the code i can use the concept of modules also which will be easy to manage the whole game 
