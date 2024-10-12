@@ -88,12 +88,8 @@ function dealComputerHand(deck) {
 // Storing the computerHand in the variable
 let computerCard = dealComputerHand(shuffledDeck);
 
-// console.log("Backend Deck:", backendDeck);
-// console.log("Player's Backend Hand:", playerCard.backendPlayer);
-// console.log("Player's Display Hand:", playerCard.playerCard);
-// console.log("Computer's Backend Hand:", computerCard.backendComputer);
-// console.log("Computer's Display Hand:", computerCard.computerCard);
-
-function playRound(){
-    
-}
+console.log("Backend Deck:", backendDeck);
+console.log("Player's Backend Hand:", playerCard.backendPlayer);
+console.log("Player's Display Hand:", playerCard.playerCard);
+console.log("Computer's Backend Hand:", computerCard.backendComputer);
+console.log("Computer's Display Hand:", computerCard.computerCard);
