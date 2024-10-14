@@ -34,7 +34,7 @@ function threeValueCheckSubCase(){
     }
 }
 
-function wholeFirstCase(){
+function threeCardCase(){
     if(threeEqualValueCheckOfPlayer() === threeEqualValueCheckOfComputer()){
         return threeValueCheckSubCase();
     }else if(threeEqualValueCheckOfPlayer()){
@@ -44,4 +44,4 @@ function wholeFirstCase(){
     }
 }
 
-console.log(wholeFirstCase());
+console.log(threeCardCase());
