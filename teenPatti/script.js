@@ -1,3 +1,4 @@
+//importing prompt-sync
 const prompt = require("prompt-sync")();
 
 //asking for username
@@ -8,7 +9,6 @@ if(userName == NaN || userName == null || userName== undefined){
     console.log("Invalid username. Please enter a non-empty string.");
     return;
 }
-
 //asking for age of the user
 let userAge = prompt("Enter your age: ");
 
@@ -45,7 +45,6 @@ function createDeck() {
     }
     return backendDeck;
 }
-
 // Storing the created deck in the variable
 const backendDeck = createDeck();
 
@@ -57,7 +56,6 @@ function shuffleDeck(deck) {
     }
     return deck;
 }
-
 // Storing the shuffled deck in the variable
 const shuffledDeck = shuffleDeck(backendDeck);
 
@@ -73,7 +71,6 @@ function dealPlayerHand(deck) {
     playerHand.push(deck.pop());
     return { backendPlayer: playerHand, playerCard: playerHand.map(formatCard) };
 }
-
 // Storing the playerHand in the variable
 let playerCard = dealPlayerHand(shuffledDeck);
 
@@ -84,12 +81,7 @@ function dealComputerHand(deck) {
     computerHand.push(deck.pop());
     return { backendComputer: computerHand, computerCard: computerHand.map(formatCard) };
 }
-
 // Storing the computerHand in the variable
 let computerCard = dealComputerHand(shuffledDeck);
 
-console.log("Backend Deck:", backendDeck);
-console.log("Player's Backend Hand:", playerCard.backendPlayer);
-console.log("Player's Display Hand:", playerCard.playerCard);
-console.log("Computer's Backend Hand:", computerCard.backendComputer);
-console.log("Computer's Display Hand:", computerCard.computerCard);
+

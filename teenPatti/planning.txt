@@ -42,3 +42,11 @@
  -callback function
  -higher order function
  -to optimize the code i can use the concept of modules also which will be easy to manage the whole game 
+
+
+-progress:
+ -player validation
+ -created deck
+ -shuffed deck
+ -dealt the cards
+ -
