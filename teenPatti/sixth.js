@@ -2,8 +2,8 @@ const cardRank = {
     "A": 14, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9, "10": 10, "J": 11, "Q": 12, "K": 13
 };
 
-let playerBackendHand = [['4', 'diamonds'], ['3', 'hearts'], ['8', 'hearts']];
-let computerBackendHand = [['7', 'diamonds'], ['A', 'hearts'], ['9', 'hearts']];
+let playerBackendHand = [ [ '2', 'spades' ], [ '5', 'diamonds' ], [ 'K', 'spades' ] ];
+let computerBackendHand = [ [ '9', 'diamonds' ], [ 'K', 'diamonds' ], [ '5', 'clubs' ] ];
 
 function creatingValueArrayOfPlayer() {
     return playerBackendHand.map(card => cardRank[card[0]]).sort((a, b) => a - b);
@@ -13,43 +13,69 @@ function creatingValueArrayOfComputer() {
     return computerBackendHand.map(card => cardRank[card[0]]).sort((a, b) => a - b);
 }
 
-function twoEqualSuitCheck(hand) {
-    for (let i = 0; i < hand.length - 1; i++) {
-        for (let j = i + 1; j < hand.length; j++) {
-            if (hand[i][1] === hand[j][1]) {
+function twoEqualSuitCheckOfPlayerReturnFunction() {
+    for (let i = 0; i < playerBackendHand.length - 1; i++) {
+        for (let j = i + 1; j < playerBackendHand.length; j++) {
+            if (playerBackendHand[i][1] === playerBackendHand[j][1]) {
                 return true;
             }
         }
     }
     return false;
-}
+};
 
-function twoEqualSuitCheckAndReturn(hand) {
-    for (let i = 0; i < hand.length - 1; i++) {
-        for (let j = i + 1; j < hand.length; j++) {
-            if (hand[i][1] === hand[j][1]) {
+function twoEqualSuitCheckOfComputerReturnFunction() {
+    for (let i = 0; i < computerBackendHand.length - 1; i++) {
+        for (let j = i + 1; j < computerBackendHand.length; j++) {
+            if (computerBackendHand[i][1] === computerBackendHand[j][1]) {
+                return true;
+            }
+        }
+    }
+    return false;
+};
+
+function twoEqualSuitCheckOfPlayer() {
+    for (let i = 0; i < playerBackendHand.length - 1; i++) {
+        for (let j = i + 1; j < playerBackendHand.length; j++) {
+            if (playerBackendHand[i][1] === playerBackendHand[j][1]) {
                 return [
-                    [cardRank[hand[i][0]], cardRank[hand[j][0]]], 
-                    hand[i][1]
+                    [cardRank[playerBackendHand[i][0]], cardRank[playerBackendHand[j][0]]], 
+                    playerBackendHand[i][1]
                 ];
             }
         }
     }
     return null; // Return null if no matching suits are found
+};
+
+function twoEqualSuitCheckOfComputer(){
+    for (let i = 0; i < computerBackendHand.length - 1; i++) {
+        for (let j = i + 1; j < computerBackendHand.length; j++) {
+            if (computerBackendHand[i][1] === computerBackendHand[j][1]) {
+                return [
+                    [cardRank[computerBackendHand[i][0]], cardRank[computerBackendHand[j][0]]], 
+                    computerBackendHand[i][1]
+            ]
+            }
+        }
+    }
+    return null;
 }
 
-function finalSixthCase() {
+function twoSameSuitCase() {
     let maxValueOfPlayer = Math.max(...creatingValueArrayOfPlayer());
     let maxValueOfComputer = Math.max(...creatingValueArrayOfComputer());
 
-    let equalSuitPlayerValueAndSuit = twoEqualSuitCheckAndReturn(playerBackendHand);
-    let equalSuitComputerValueAndSuit = twoEqualSuitCheckAndReturn(computerBackendHand);
-
-    if (twoEqualSuitCheck(playerBackendHand) && !twoEqualSuitCheck(computerBackendHand)) {
+    let equalSuitPlayerValueAndSuit = twoEqualSuitCheckOfPlayer();
+    let equalSuitComputerValueAndSuit = twoEqualSuitCheckOfComputer();
+    
+    
+    if (twoEqualSuitCheckOfPlayerReturnFunction() && !twoEqualSuitCheckOfComputerReturnFunction()) {
         return "Player wins";
-    } else if (!twoEqualSuitCheck(playerBackendHand) && twoEqualSuitCheck(computerBackendHand)) {
+    } else if (!twoEqualSuitCheckOfPlayerReturnFunction() && twoEqualSuitCheckOfComputerReturnFunction()) {
         return "Computer wins";
-    } else if (twoEqualSuitCheck(playerBackendHand) && twoEqualSuitCheck(computerBackendHand)) {
+    } else if (twoEqualSuitCheckOfPlayerReturnFunction() && twoEqualSuitCheckOfComputerReturnFunction()) {
         if (equalSuitPlayerValueAndSuit[1] !== equalSuitComputerValueAndSuit[1]) {
             if (maxValueOfPlayer > maxValueOfComputer) {
                 return "Player wins";
@@ -59,7 +85,7 @@ function finalSixthCase() {
         } else {
             let sortedEqualSuitPlayerValue = equalSuitPlayerValueAndSuit[0].sort((a, b) => a - b);
             let sortedEqualSuitComputerValue = equalSuitComputerValueAndSuit[0].sort((a, b) => a - b);
-
+            
             if (sortedEqualSuitPlayerValue[1] > sortedEqualSuitComputerValue[1]) {
                 return "Player wins";
             } else if (sortedEqualSuitPlayerValue[1] < sortedEqualSuitComputerValue[1]) {
@@ -76,4 +102,4 @@ function finalSixthCase() {
     return "No clear winner"; // In case all comparisons are tied
 }
 
-console.log(finalSixthCase());
+console.log(twoSameSuitCase());

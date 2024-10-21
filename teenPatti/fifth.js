@@ -15,11 +15,22 @@ function creatingValueArrayOfComputer() {
     return computerBackendHand.map(card => cardRank[card[0]]).sort((a, b) => a - b);
 }
 
-function twoEqualValueCheck(hand) {
-    for (let i = 0; i < hand.length - 1; i++) {
-        for (let j = i + 1; j < hand.length; j++) {
-            if (hand[i][0] === hand[j][0]) {
-                return cardRank[hand[i][0]];
+function twoEqualValueCheckOfPlayer() {
+    for (let i = 0; i < playerBackendHand.length - 1; i++) {
+        for (let j = i + 1; j < playerBackendHand.length; j++) {
+            if (playerBackendHand[i][0] === playerBackendHand[j][0]) {
+                return cardRank[playerBackendHand[i][0]];
+            }
+        }
+    }
+    return null;
+}
+
+function twoEqualValueCheckOfComputer() {
+    for (let i = 0; i < computerBackendHand.length - 1; i++) {
+        for (let j = i + 1; j < computerBackendHand.length; j++) {
+            if (computerBackendHand[i][0] === computerBackendHand[j][0]) {
+                return cardRank[computerBackendHand[i][0]];
             }
         }
     }
@@ -30,9 +41,9 @@ function getThirdCardValue(hand, repeatedValue) {
     return hand.map(card => cardRank[card[0]]).find(value => value !== repeatedValue);
 }
 
-function twoSameSuitCase() {
-    let playerRepeatedValue = twoEqualValueCheck(playerBackendHand);
-    let computerRepeatedValue = twoEqualValueCheck(computerBackendHand);
+function twoSameValueCase() {
+    let playerRepeatedValue = twoEqualValueCheckOfPlayer();
+    let computerRepeatedValue = twoEqualValueCheckOfComputer();
 
     if (playerRepeatedValue && !computerRepeatedValue) {
         return "Player wins";
@@ -56,3 +67,4 @@ function twoSameSuitCase() {
     }
 }
 
+console.log(twoSameSuitCase());

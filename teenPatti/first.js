@@ -24,7 +24,7 @@ function threeEqualValueCheckOfComputer(){
     }
 }
 
-function threeValueCheckSubCase(){
+function threeEqualValueCheckSubCase(){
     let playerValue = cardRank[playerBackendHand[0][0]];
     let computerValue = cardRank[computerBackendHand[0][0]];
     if(playerValue > computerValue){
@@ -34,7 +34,7 @@ function threeValueCheckSubCase(){
     }
 }
 
-function threeCardCase(){
+function threeEqualValueCardCase(){
     if(threeEqualValueCheckOfPlayer() === threeEqualValueCheckOfComputer()){
         return threeValueCheckSubCase();
     }else if(threeEqualValueCheckOfPlayer()){

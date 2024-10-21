@@ -88,15 +88,24 @@ function suitSequenceCase(){
     let playerValueArray = creatingValueArrayOfPlayer();
     let computerValueArray = creatingValueArrayOfComputer();
 
-    let playerValueSum = playerValueArray.reduce((val, currVal) => val + currVal, 0);
-    let computerValueSum = computerValueArray.reduce((val, currVal) => val + currVal, 0);
-
     if (threeEqualSuitsCheckOfPlayer() && threeEqualSuitsCheckOfComputer()) {
         if (sequenceCheckOfPlayer() && sequenceCheckOfComputer()) {
-            if (playerValueSum > computerValueSum) {
+            if (playerValueArray[2] > computerValueArray[2]) {
                 return "Player wins";
-            } else if (playerValueSum < computerValueSum) {
+            }else if (playerValueArray[2] < computerValueArray[2]) {
                 return "Computer wins";
+            }else if (playerValueArray[2] === computerValueArray[2]) {
+                if (playerValueArray[1] > computerValueArray[1]) {
+                    return "Player wins";
+                }else if (playerValueArray[1] < computerValueArray[1]) {
+                    return "Computer wins";
+                }else if (playerValueArray[1] === computerValueArray[1]) {
+                    if (playerValueArray[0] > computerValueArray[0]) {
+                        return "Player wins";
+                    }else if (playerValueArray[0] < computerValueArray[0]) {
+                        return "Computer wins";
+                    }
+                }
             }
         }
     }

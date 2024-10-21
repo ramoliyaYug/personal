@@ -1,3 +1,6 @@
+//importing prompt-sync
+const prompt = require("prompt-sync")();
+
 //asking for username
 let userName = prompt("Enter your name: ");
 

@@ -4,9 +4,9 @@ const cardRank = {
 
 let specialSequenceArray = [2,3,14]
 
-let playerBackendHand = [ [ '6', 'hearts' ], [ '7', 'diamonds' ], [ '8', 'hearts' ] ];
+let playerBackendHand = [ [ 'A', 'diamonds' ], [ '3', 'diamonds' ], [ 'A', 'spades' ] ];
 
-let computerBackendHand = [ [ '7', 'diamonds' ], [ '8', 'hearts' ], [ '9', 'hearts' ] ];
+let computerBackendHand = [ [ '5', 'clubs' ], [ '6', 'clubs' ], [ '7', 'diamonds' ] ];
 
 //no need of recreating the function again just call it
 function creatingValueArrayOfPlayer(){
@@ -84,42 +84,22 @@ function onlySequenceCase() {
     } else if (!playerHasSequence && computerHasSequence) {
         return "Computer wins";
     } else if (playerHasSequence && computerHasSequence) {
-        // Compare the highest card in the sequence
         if (playerValueArray[2] > computerValueArray[2]) {
             return "Player wins";
         } else if (playerValueArray[2] < computerValueArray[2]) {
             return "Computer wins";
-        } else {
-            // If the highest card is the same, compare the second highest card
+        } else if (playerValueArray[2] === computerValueArray[2]) {
             if (playerValueArray[1] > computerValueArray[1]) {
                 return "Player wins";
             } else if (playerValueArray[1] < computerValueArray[1]) {
                 return "Computer wins";
-            } else {
-                // If the second highest card is also the same, compare the third
+            } else if (playerValueArray[1] === computerValueArray[1]) {
                 if (playerValueArray[0] > computerValueArray[0]) {
                     return "Player wins";
                 } else if (playerValueArray[0] < computerValueArray[0]) {
                     return "Computer wins";
                 }
             }
-        }
-    } else {
-        // If no sequences, compare the highest card
-        if (playerValueArray[2] > computerValueArray[2]) {
-            return "Player wins";
-        } else if (playerValueArray[2] < computerValueArray[2]) {
-            return "Computer wins";
-        } else if (playerValueArray[1] > computerValueArray[1]) {
-            return "Player wins";
-        } else if (playerValueArray[1] < computerValueArray[1]) {
-            return "Computer wins";
-        } else if (playerValueArray[0] > computerValueArray[0]) {
-            return "Player wins";
-        } else if (playerValueArray[0] < computerValueArray[0]) {
-            return "Computer wins";
-        } else {
-            return "It's a tie";
         }
     }
 }
