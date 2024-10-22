@@ -67,10 +67,10 @@ function dealPlayerHand(deck) {
 // Storing the playerHand in the variable
 let playerCard = dealPlayerHand(shuffledDeck);
 //storing the player backend hand in seperate variable
-// let playerBackendHand = playerCard.backendPlayer;
+let playerBackendHand = playerCard.backendPlayer;
 //storing the player display hand in seperate variable
 let playerDisplayHand = playerCard.playerCard;
-let playerBackendHand = [ [ 'A', 'diamonds' ], [ '3', 'diamonds' ], [ 'A', 'spades' ] ];
+// let playerBackendHand = [ [ 'A', 'diamonds' ], [ '3', 'diamonds' ], [ 'A', 'spades' ] ];
 
 // Dealing the card to the computerHand
 function dealComputerHand(deck) {
@@ -82,10 +82,10 @@ function dealComputerHand(deck) {
 // Storing the computerHand in the variable
 let computerCard = dealComputerHand(shuffledDeck);
 //storing the computer backend hand in seperate variable
-// let computerBackendHand = computerCard.backendComputer;
+let computerBackendHand = computerCard.backendComputer;
 //storing the computer display hand in seperate variable
 let computerDisplayHand = computerCard.computerCard;
-let computerBackendHand = [ [ '5', 'clubs' ], [ '6', 'clubs' ], [ '7', 'diamonds' ] ];
+// let computerBackendHand = [ [ '5', 'clubs' ], [ '6', 'clubs' ], [ '7', 'diamonds' ] ];
 
 //defining the special sequence of the cards in array formate
 let specialSequenceArray = [2,3,14];
@@ -235,44 +235,45 @@ function checkingSecondCase(){
 };
 
 //function to deciding the winner theough second case.
-function suitSequenceCase(){
-    let playerValueArray = creatingValueArrayOfPlayer();
-    let computerValueArray = creatingValueArrayOfComputer();
-
+function suitSequenceCase() {
     if (threeEqualSuitsCheckOfPlayer()) {
         if (sequenceCheckOfPlayer() || specialSequenceOfPlayer()) {
             return "Player wins";
         }
-    };
+    }
 
     if (threeEqualSuitsCheckOfComputer()) {
         if (sequenceCheckOfComputer() || specialSequenceOfComputer()) {
             return "Computer wins";
         }
-    };
+    }
+
+    let playerValueArray = creatingValueArrayOfPlayer();
+    let computerValueArray = creatingValueArrayOfComputer();
 
     if (threeEqualSuitsCheckOfPlayer() && threeEqualSuitsCheckOfComputer()) {
         if (sequenceCheckOfPlayer() && sequenceCheckOfComputer()) {
             if (playerValueArray[2] > computerValueArray[2]) {
                 return "Player wins";
-            }else if (playerValueArray[2] < computerValueArray[2]) {
+            } else if (playerValueArray[2] < computerValueArray[2]) {
                 return "Computer wins";
-            }else if (playerValueArray[2] === computerValueArray[2]) {
+            } else if (playerValueArray[2] === computerValueArray[2]) {
                 if (playerValueArray[1] > computerValueArray[1]) {
                     return "Player wins";
-                }else if (playerValueArray[1] < computerValueArray[1]) {
+                } else if (playerValueArray[1] < computerValueArray[1]) {
                     return "Computer wins";
-                }else if (playerValueArray[1] === computerValueArray[1]) {
+                } else if (playerValueArray[1] === computerValueArray[1]) {
                     if (playerValueArray[0] > computerValueArray[0]) {
                         return "Player wins";
-                    }else if (playerValueArray[0] < computerValueArray[0]) {
+                    } else if (playerValueArray[0] < computerValueArray[0]) {
                         return "Computer wins";
                     }
                 }
             }
         }
     }
-};
+    return caseHandler();
+}
 
 //function to check if the third case is happening or not
 function checkingThirdCase(){
@@ -599,6 +600,20 @@ function finalWinner(){
     }
 }
 
+function caseHandler(){
+    if(checkingThirdCase()){
+        return suitOnlyCase();
+    }else if(checkingFourthCase()){
+        return onlySequenceCase();
+    }else if(checkingFifthCase()){
+        return twoSameValueCase();
+    }else if(checkingSixthCase()){
+        return twoSameSuitCase();
+    }else {
+        return lastCase();
+    }
+};
+
 function gameFlow(){
     // Asking for player's name
     playerName = prompt("Enter your name: ");
@@ -622,13 +637,34 @@ function gameFlow(){
     }
 
     //game loop
+    console.log("Your cards are: " + playerDisplayHand);
     let continueGame = true;
     while (continueGame) {
         //showing player's cards
-        console.log("Your cards are: " + playerDisplayHand);
+        let readyToBet = prompt("Are you ready to bet (y/n)? ").toLowerCase();
+        if (readyToBet === 'y') {
+            // Player enters bet amount
+            playerBet = parseInt(prompt("Enter your bet amount: "));
+            while (playerBet <= 0 || playerBet > playerWallet) {
+                console.log("Invalid bet. Please enter a valid amount.");
+                playerBet = parseInt(prompt("Enter your bet amount: "));
+            }
+
+            // Computer automation function
+            console.log("computer");
+
+            // Asking if the player wants to play the next move
+            let nextMove = prompt("Do you want to play the next move (y/n)? ").toLowerCase();
+            if (nextMove === 'n') {
+                continueGame = false;
+            }
+        } else {
+            continueGame = false;
+        }
     }
-        
 }
+
+
 
 function printingAllCasesReturnValues(){
     console.log("First Case: "+ checkingFirstCase());
@@ -639,7 +675,8 @@ function printingAllCasesReturnValues(){
     console.log("Sixth Case: "+ checkingSixthCase());
     console.log("Seventh Case: "+ lastCase());
 }
-console.log(playerBackendHand);
-console.log(computerBackendHand);
-printingAllCasesReturnValues()
+// console.log(playerDisplayHand);
+// console.log(computerDisplayHand);
+// printingAllCasesReturnValues();
 console.log(finalWinner());
+gameFlow();

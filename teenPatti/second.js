@@ -4,9 +4,9 @@ const cardRank = {
 
 let specialSequenceArray = [2,3,14]
 
-let playerBackendHand = [ [ 'A', 'hearts' ], [ '2', 'hearts' ], [ '3', 'hearts' ] ];
+let playerBackendHand = [ [ 'A', 'diamonds' ], [ '3', 'diamonds' ], [ 'A', 'spades' ] ];
 
-let computerBackendHand = [ [ 'A', 'diamonds' ], [ 'A', 'hearts' ], [ 'A', 'hearts' ] ];
+let computerBackendHand = [ [ '5', 'clubs' ], [ '6', 'clubs' ], [ '7', 'diamonds' ] ];
 
 function creatingValueArrayOfPlayer(){
     let playerValueArray = playerBackendHand.map(card => cardRank[card[0]]).sort((a,b)=>a-b);
@@ -72,7 +72,7 @@ function specialSequenceOfComputer(){
     return false;
 }
 
-function suitSequenceCase(){
+function suitSequenceCase() {
     if (threeEqualSuitsCheckOfPlayer()) {
         if (sequenceCheckOfPlayer() || specialSequenceOfPlayer()) {
             return "Player wins";
@@ -92,23 +92,26 @@ function suitSequenceCase(){
         if (sequenceCheckOfPlayer() && sequenceCheckOfComputer()) {
             if (playerValueArray[2] > computerValueArray[2]) {
                 return "Player wins";
-            }else if (playerValueArray[2] < computerValueArray[2]) {
+            } else if (playerValueArray[2] < computerValueArray[2]) {
                 return "Computer wins";
-            }else if (playerValueArray[2] === computerValueArray[2]) {
+            } else if (playerValueArray[2] === computerValueArray[2]) {
                 if (playerValueArray[1] > computerValueArray[1]) {
                     return "Player wins";
-                }else if (playerValueArray[1] < computerValueArray[1]) {
+                } else if (playerValueArray[1] < computerValueArray[1]) {
                     return "Computer wins";
-                }else if (playerValueArray[1] === computerValueArray[1]) {
+                } else if (playerValueArray[1] === computerValueArray[1]) {
                     if (playerValueArray[0] > computerValueArray[0]) {
                         return "Player wins";
-                    }else if (playerValueArray[0] < computerValueArray[0]) {
+                    } else if (playerValueArray[0] < computerValueArray[0]) {
                         return "Computer wins";
                     }
                 }
             }
         }
     }
+
+    // If no conditions match, return "No winner"
+    return "No winner";
 }
 
 console.log(suitSequenceCase());
