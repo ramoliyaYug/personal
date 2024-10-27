@@ -615,56 +615,11 @@ function caseHandler(){
 };
 
 function gameFlow(){
-    // Asking for player's name
-    playerName = prompt("Enter your name: ");
-    while (!validateName(playerName)) {
-        console.log("Invalid name. Please try again.");
-        playerName = prompt("Enter your name: ");
-    }
-
-    // Asking for player's age
-    playerAge = parseInt(prompt("Enter your age: "));
-    while (!validateAge(playerAge)) {
-        console.log("You must be 18 or older to play.");
-        playerAge = parseInt(prompt("Enter your age: "));
-    }
-
-    //asking to add initial amount in player's wallet
-    playerWallet = parseInt(prompt("Enter the amount to add to your wallet: "));
-    while (playerWallet <= 0) {
-        console.log("Please enter a valid amount.");
-        playerWallet = parseInt(prompt("Enter the amount to add to your wallet: "));
-    }
-
+    //player validation
     //game loop
-    console.log("Your cards are: " + playerDisplayHand);
-    let continueGame = true;
-    while (continueGame) {
-        //showing player's cards
-        let readyToBet = prompt("Are you ready to bet (y/n)? ").toLowerCase();
-        if (readyToBet === 'y') {
-            // Player enters bet amount
-            playerBet = parseInt(prompt("Enter your bet amount: "));
-            while (playerBet <= 0 || playerBet > playerWallet) {
-                console.log("Invalid bet. Please enter a valid amount.");
-                playerBet = parseInt(prompt("Enter your bet amount: "));
-            }
-
-            // Computer automation function
-            console.log("computer");
-
-            // Asking if the player wants to play the next move
-            let nextMove = prompt("Do you want to play the next move (y/n)? ").toLowerCase();
-            if (nextMove === 'n') {
-                continueGame = false;
-            }
-        } else {
-            continueGame = false;
-        }
-    }
+      //player bet validation
+      //computer bet validation
 }
-
-
 
 function printingAllCasesReturnValues(){
     console.log("First Case: "+ checkingFirstCase());
@@ -675,8 +630,8 @@ function printingAllCasesReturnValues(){
     console.log("Sixth Case: "+ checkingSixthCase());
     console.log("Seventh Case: "+ lastCase());
 }
-// console.log(playerDisplayHand);
-// console.log(computerDisplayHand);
-// printingAllCasesReturnValues();
+console.log(playerDisplayHand);
+console.log(computerDisplayHand);
+printingAllCasesReturnValues();
 console.log(finalWinner());
-gameFlow();
+// gameFlow();

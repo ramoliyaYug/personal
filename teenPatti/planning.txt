@@ -43,10 +43,8 @@
  -higher order function
  -to optimize the code i can use the concept of modules also which will be easy to manage the whole game 
 
+-implimentation of the game flow:
+ - player validation will be done seperately
+ - bet amount validation will be done seperately
 
 -progress:
- -player validation
- -created deck
- -shuffed deck
- -dealt the cards
- -
