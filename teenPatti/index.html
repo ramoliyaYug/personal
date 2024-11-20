@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teen Patti</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--heading-->
+    <h1>TEEN PATTI</h1>
+
+    <!-- parent form div -->
+    <div class="parentFormDiv">
+      <div class="formDiv">
+        <form action="">
+          <label for="name">Name</label>
+          <input type="text" id="name" required />
+          <label for="age">Age</label>
+          <input type="number" id="age" required />
+          <label for="amount">Amount</label>
+          <input type="number" id="amount" required />
+          <p id="errorDisplay"></p>
+          <button onclick="playerValidation(event)">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- start game button -->
+    <div class="parentStartBtn">
+      <div class="startBtn">
+        <button onclick="startGame()">Start Game</button>
+      </div>
+    </div>
+
+    <div class="parentGameDiv">
+      <div class="gameDiv">
+        <!--player div-->
+        <div class="parentPlayerDiv">
+          <div class="playerDiv">
+            <div class="playerInfo">
+              <p class="playerName">
+                Your Name: <span id="playerName"></span>
+              </p>
+              <p class="playerAge">Your Age: <span id="playerAge">17</span></p>
+              <p class="playerAmount">
+                Your Wallet Amount: <span id="playerAmount">1000</span>
+              </p>
+            </div>
+
+            <h2 class="playerCardsHeading">Your Cards</h2>
+            <div class="playerCards">
+              <div id="playerCard1"></div>
+              <div id="playerCard2"></div>
+              <div id="playerCard3"></div>
+            </div>
+
+            <div class="showCardBtn">
+              <button id="showPlayerCardBtn" onclick="displayPlayerCardOnDom()">Show Card</button>
+            </div>
+
+            <div class="bet">
+              <label for="bet">Enter Your Bet Amount</label>
+              <input type="number" id="bet" />
+              <button onclick="bet(); modifiedWinner();">Bet</button>
+            </div>
+
+            <div class="endGameBtn">
+              <button onclick="endGameOfPlayer()">End Game</button>
+            </div>
+          </div>
+        </div>
+
+        <!--result div-->
+        <div class="parentResultDiv">
+          <div class="resultDiv">
+            <h2 class="resultHeading">Game Board</h2>
+            <p class="turnOf">Turn Of: <span id="turnOf"></span></p>
+            <p class="lastBet">Last Bet: <span id="lastBet"></span></p>
+            <p class="winner">Winner: <span id="winner"></span></p>
+            <p class="winnerAmount">
+              Winning Amount: <span id="winnerAmount"></span>
+            </p>
+            <button class="nextMoveBtn" id="nextMoveBtn" onclick="computerAutomation();modifiedWinner();">Next Move</button>
+            <button class="playAgainBtn" id="playAgainBtn" onclick="location.reload()" disabled="true">Play Again</button>
+          </div>
+        </div>
+
+        <!--computer div-->
+        <div class="parentComputerDiv">
+          <div class="computerDiv">
+            <div class="computerInfo">
+              <p class="computerName">
+                Computer Name: <span id="computerName"></span>
+              </p>
+              <p class="computerAge">
+                Computer Age: <span id="computerAge"></span>
+              </p>
+              <p class="computerAmount">
+                Computer Wallet Amount: <span id="computerAmount"></span>
+              </p>
+            </div>
+
+            <h2 class="computerCardsHeading">Computer Cards</h2>
+            <div class="computerCards" id="computerCards">
+              <div id="computerCard1"></div>
+              <div id="computerCard2"></div>
+              <div id="computerCard3"></div>
+            </div>
+
+            <div class="showCardBtn">
+              <button id="showComputerCardBtn" onclick="endGameOfViaComputer()" disabled="true">Show Card</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--javascript-->
+    <script src="script.js"></script>
+  </body>
+</html>

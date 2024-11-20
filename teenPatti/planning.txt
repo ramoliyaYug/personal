@@ -48,3 +48,19 @@
  - bet amount validation will be done seperately
 
 -progress:
+
+
+-computerAutomation function:
+ -on the next move this function will call
+ -the calculation of the bet function will be called
+ -
+
+
+-bet calculation logic
+ -comp will not have access to the player cards.
+ -it will have the access of the player bet.
+ -it will evaluate the cases like which case is apply to the cards
+ -then the range of the bet amount will be calculated, it will be random between the interval based ont the cases.
+
+ //later things which can be done
+ -making more random by using more random conditions like comp will randomly increase the bet by large amount and sometimes increase by the small amount

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best of Luck 🎉</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="nameInputSection" class="container">
+        <h1>Enter Your Name</h1>
+        <input type="text" id="nameInput" placeholder="Enter your name..." />
+        <button id="submitName" class="button">Submit</button>
+    </div>
+
+    <div id="mainContent" class="container hidden">
+        <h1 id="greeting">Best of Luck, 🎉</h1>
+        <p>You're going to ace your JavaScript exam tomorrow! 🌟</p>
+        <div class="buttons">
+            <button id="tipsButton" class="button">Tips From My Side</button>
+            <button id="wishButton" class="button">Make a Wish</button>
+        </div>
+    </div>
+
+    <div id="tipsPopup" class="popup hidden">
+        <div class="popup-content">
+            <h2>Tips for Your Exam ✨</h2>
+            <ul>
+                <li>Don't forget to revise HOFs,Clouser,hoisintg,cloning for vaiva</li>
+                <li>Practice most poplular questions on array,string and yes please remember all string and arrays methods it will be so so helpful in exam</li>
+                <li>Stay confident and believe in yourself!</li>
+            </ul>
+            <button id="closeTips" class="close-button">Close</button>
+        </div>
+    </div>
+
+    <div id="wishPopup" class="popup hidden">
+        <div class="popup-content">
+            <h2>Make a Wish! 🌠</h2>
+            <input type="text" id="wishInput" placeholder="Enter a wish about tomorrow's exam...">
+            <button id="sendWish" class="button">Send Wish</button>
+        </div>
+    </div>
+
+    <div id="finalMessage" class="popup hidden">
+        <div class="popup-content">
+            <p>Don't take too much stress, and don't forget to rest. Sleep well, and good night! 💤sweet dreams😴</p>
+            <button id="closeFinal" class="close-button">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
