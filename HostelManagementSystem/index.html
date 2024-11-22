@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Management App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Hostel Management App</h1>
+
+    <!-- Buttons to toggle visibility -->
+    <div class="buttonContainer">
+        <button id="studentButton">Student Login</button>
+        <button id="wardenButton">Warden Login</button>
+    </div>
+
+    <!-- Student Login Form -->
+    <div class="formContainer" id="studentForm">
+        <h2>Student Log In</h2>
+        <form action="studentLogIn.html" method="get">
+            <label for="userName">Student's Name:</label>
+            <input type="text" id="userName" name="userName" required>
+            <label for="FlatNo">Flat No:</label>
+            <input type="text" id="FlatNo" name="FlatNo" required>
+            <input type="submit" value="Log In">
+        </form>
+    </div>
+
+    <!-- Warden Login Form -->
+    <div class="formContainer" id="wardenForm" style="display: none;">
+        <h2>Warden Log In</h2>
+        <form action="wardenLogIn.html" method="get">
+            <label for="wardenName">Warden's Name:</label>
+            <input type="text" id="wardenName" name="wardenName" required>
+            <label for="wardenPassword">Password:</label>
+            <input type="password" id="wardenPassword" name="wardenPassword" required>
+            <input type="submit" value="Log In">
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

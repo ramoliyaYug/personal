@@ -1,3 +1,0 @@
-- 0 to 9 cards
-- each color has 1 skip, reverse and +2 cards
-- 4 wild and +4 cards

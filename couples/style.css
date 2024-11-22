@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('christmas-5740350.svg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+
+h1, h3 {
+    margin: 20px;
+    padding: 10px;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffcb00;
+}
+
+h3 {
+    font-size: 1.5em;
+    color: #ff5a00;
+}
+
+
+p {
+    font-size: 1.2em;
+    margin: 20px 0;
+    padding: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    color: #f6eb56;
+}
+
+
+input[type="text"] {
+    font-size: 1.2em;
+    padding: 15px;
+    width: 80%;
+    max-width: 500px;
+    margin: 10px auto;
+    border-radius: 8px;
+    border: 2px solid #ff5a00;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+
+input[type="button"] {
+    background-color: #ff5a00;
+    color: white;
+    border: none;
+    padding: 20px 40px; 
+    font-size: 1.5em; 
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+input[type="button"]:hover {
+    background-color: #ffcb00;
+    transform: scale(1.1);
+}
+
+
+#result {
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+#compatibility-result {
+    font-size: 1.5em;
+    color: #ffcb00;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    h3 {
+        font-size: 1.2em;
+    }
+    input[type="button"] {
+        padding: 15px 30px;
+        font-size: 1.2em;
+    }
+    input[type="text"] {
+        padding: 12px;
+        font-size: 1em;
+        width: 90%;
+    }
+    p {
+        font-size: 1em;
+    }
+    #result {
+        width: 90%;
+    }
+}
+
+#calculate-btn {
+    padding: 15px 30px; 
+    font-size: 1.5rem; 
+    background-color: #4CAF50; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+#calculate-btn:hover {
+    background-color: #45a049; 
+}
